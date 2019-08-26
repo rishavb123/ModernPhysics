@@ -1,40 +1,27 @@
-\section{Classifications of Differential Equations}
-    If a function depends on a single variable, and then you take the derivative with respect to that variable, you are taking an ordinary derivative.
+\section{Rotations and the Center of Mass}
+    The \textbf{angular velocity} $\va{\omega}$ is the rate at which the angle $\theta$ changes. Its direction is determined by the right hand rule (Fingers in direction of motion, thumb is direction of $\va{\omega}$). The rate at which $\omega$ changes is the \textbf{angular acceleration} vector $\va{\alpha}$. The rotation eq uivalents for mass and force, are \textbf{rotational inertia} $I$ and \textbf{torque} $\va{\tau}$. So Newton's second law for rotation motion is
     \begin{equation*}
-        f(x) = 2x^2
+        \va{\tau} = I\va{\alpha} = \frac{d\va{L}}{dt}
     \end{equation*}
+    where $\va{L}$ is \textbf{angular momentum}, which is defined as $$\va{L} = \va{r} \cross \va{p}$$
+    Torque is similarly defined as $$\va{\tau} = \va{r} \cross \va{F}$$
+    The rotational inertia $I$ is dependent on the way an objects mass is distributed. By breaking up the object of total mass $$M = \sum_i \Delta m_i$$ into many discrete portions of mass, we can set
     \begin{equation*}
-        \frac{df}{dx} = 4x
+        I \equiv \sum_i (\Delta m_i) r_i^2 = \int r^2 dm
     \end{equation*}
-    If a function depends on multiple variables, and you are taking a derivative with respect to one of them, then it is a partial derivative.
+    Work one in a rotation rigid body is defined as 
     \begin{equation*}
-        f(x, y) = 2xy
+        W = \int_{\theta_i}^{\theta_f} \tau d\theta
     \end{equation*}
+    Kinetic energy of a rotating object is
     \begin{equation*}
-        \frac{\partial f}{\partial x} = 2y
+        K = \frac{1}{2}I\omega^2
     \end{equation*}
-    An equation with only ordinary derivatives is an \textbf{ordinary differential equation}, while an equation with both ordinary and partial derivatives is a \textbf{partial differential equation}.
-    \newline \newline
-    If there are more than one unknown functions that you are looking for, use a system of differential equations.
-    \newline \newline
-    The \textbf{order} of a differential equation is the order of the highest derivative that appears in the equation. Using $y = u(t)$
+    The \textbf{center of mass} is defined as 
     \begin{equation*}
-        F(t, u(t), u'(t), u''(t), \dots, u^{(n)}(t)) = F(t, y, y', y'', \dots, y^{(n)}) = 0
+        \va{R} = \frac{\sum_i m_i\va{r}_i}{M}
     \end{equation*}
-    A differential equation is said to be \textbf{linear} if it can be written in the form
+    For an external force moving the object, the mass will act as a point mass at $\va{R}$, so 
     \begin{equation*}
-        a_0(t)y^{(n)} + a_1(t)y^{(n - 1)} + \dots + a_n(t)y = \sum_{i=0}^{n} a_i(t)y^{(n-i)} = g(t)
+        \va{F}_{\text{net, external}} = M\va{A} = M\frac{d^2\va{R}}{dt^2}
     \end{equation*}
-    An equation that cannot be written in that form is called a \textbf{nonlinear} equation. For example,
-    \begin{equation*}
-        \frac{d^2\theta}{dt^2} + \frac{g}{L} \sin \theta = 0
-    \end{equation*}
-    Since the methods solving linear differential equations are highly developed, it is sometimes useful to use linear approximations of nonlinear functions. This process of approximating a nonlinear equation by a linear one is called \textbf{linearization}. For example, when $\theta$ is small, $sin \theta \approx \theta$. So the previous equation becomes
-    \begin{equation*}
-        \frac{d^2\theta}{dt^2} + \frac{g}{L} \theta = 0
-    \end{equation*}
-    A \textbf{solution} of an ordinary differential equation on the interval $\alpha < t < \beta$ is a function $\phi$ such that $\phi'$, $\phi''$, $\dots$, $\phi^{(n)}$ exist and satisy
-    \begin{equation*}
-        \phi^{(n)}(t) = f[t, \phi(t), \phi'(t), \phi''(t), \dots, \phi^{(n - 1)}(t)]
-    \end{equation*}
-    for every t in $\alpha < t < \beta$, $t \in \{r \in \textbf{R}: \alpha < t < \beta\}$, or $t \in (\alpha, \beta)$.
