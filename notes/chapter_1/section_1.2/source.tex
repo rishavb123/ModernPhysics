@@ -15,4 +15,32 @@
     \begin{equation*}
         W_{net} = \Delta K = K_f - K_i
     \end{equation*}
-    aka the \textbf{work-energy theorem}.
+    aka the \textbf{work-energy theorem}. A \textbf{conservative force} is a force which the work done by the force is path independent (it only depends on the start and end state).
+    \begin{equation*}
+        \int_{\va{r}_i}^{\va{r}_f} \va{F} \vdot d\va{r} = f(\va{r}_f) - f(\va{r}_i)
+    \end{equation*}
+    We define potential energy for these forces as
+    \begin{equation*}
+        U(\va{r}) = - \int_{\va{r}_0}^{\va{r}} \va{F} \vdot d\va{r} + U(\va{r}_0)
+    \end{equation*}
+    So $U(\va{r}_f) - U(\va{r}_i) = - \int_{\va{r}_i}^{\va{r}_f} \va{F} \vdot d\va{r}$. We also set \textbf{total energy} to 
+    \begin{equation*}
+        E \equiv U(\va{r}) + K
+    \end{equation*}
+    \textbf{Important potential energies}
+    \begin{equation*}
+        \text{Local Gravity: } U(h) = mgh
+    \end{equation*}
+    \begin{equation*}
+        \text{Local Gravity: } U(h) = mgh
+    \end{equation*}
+    \begin{equation*}
+        \text{Gravitation: } U(r) = - \frac{Gm_1m_2}{r}
+    \end{equation*}
+    Given the potential energy, we can find the force using the gradient
+    \begin{equation*}
+        \va{F}(\va{r}) = -\va{\grad}U
+    \end{equation*}
+    \begin{equation*}
+        F(x) = - \frac{dU}{dx} \text{ (in one dimension)}
+    \end{equation*}
