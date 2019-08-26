@@ -1,20 +1,40 @@
-\section{The Axiom of Completeness}
-    \textbf{Axiom of Completeness.} \textit{Every nonempty set of real numbers that is bounded above has a least upper bound}
-    \subsection*{Least Upper Bounds and Greatest Lower Bounds}
-        \textbf{Definition} A set $A \in \textbf{R}$ is \textit{bounded above} if there exists a number $b \in \textbf{R}$ such that $a \leq b$ fro all $a \in A$. The number b is an \textit{upper bound} for $A$. 
-        \newline \indent The set $A$ is \textit{bounded below} if there exists a \textit{lower bound} $l \in \textbf{R}$ so that $l \leq a$ for all $a \in A$.
-        \newline \textbf{Definition} A real number $s$ is the \textit{least upper bound} for a set $A \in \textbf{R}$ if it meets two criteria:
-        \newline \indent (i) $s$ is an upper bound for $A$;
-        \newline \indent (ii) if $b$ is any upper bound for $A$, then $s \leq b$;
-        \newline
-        The least upper bound is also called the \textit{supremum} of $A$. So, $s = \text{lub } A = \text{sup } A$. 
-        \newline \indent The \textit{greatest lower bound} or \textit{infimum} for $A$ is defined similarly and is denoted by inf $A$.
-        \newline \indent A set can have many upper bounds, but only one least upper bound. If $s_1$ and $s_2$ are both least upper bounds, then by property (ii) we can assert $s_1 \leq s_2$ and $s_2 \leq s_1$, and that $s_1 = s_2$.
-        \newline \indent A real number $a_0$ is a \textit{maximum} of set $A$ if $a_0$ is an element of $A$ and $a_0 \geq a$ for each $a \in A$. Similarly, a number $a_1$ is a \textit{minimum} of $A$ if $a_1 \in A$ and $a_1 \leq a$ for each $a \in A$.
-        \newline \indent An upper bounded set is guaranteed to have a least upper bound by \textit{The Axiom of Completeness}, but it is not guaranteed to have a maximum. A supremum can exist and not be a maximum (if the supremum does not exist in the set), but when a maximum exists it is also the supremum.
-        \textbf{Lemma} \textit{Assume $s \in \textbf{R}$ is an upper bound for a set $A \in \textbf{R}$. Then, $s = \text{sup } A$ if and only if, for every choice of $\epsilon > 0$, there exists an element $a \in A$ satisfying $s - \epsilon < a$}
-        \begin{proof}
-            Given that $s$ is an upper bound, $s$ is the leastupper bound if and only if any number smaller than $s$ is not an upper bound.
-            \newline \indent $\Rightarrow$ Assume $s = \text{sup } A$ and consider $s - \epsilon$, where $\epsilon > 0$ has been chosen. Since $s - \epsilon < s$, $s - \epsilon$ is not an upper bound for \textit{A}. So there must be an $a \in A$ such that $s - \epsilon < a$.
-            \newline \indent $\Leftarrow$ Assume s is an upper bound so that for every $\epsilon > 0$, $s - \epsilon$ is no longer an upper bound for A. $s = \text{sup } A$ since $s$ is an upper bound, and any real number $b < s$ is not an upper bound. This is apparent by setting $\epsilon = s - b$. 
-        \end{proof}
+\section{Classifications of Differential Equations}
+    If a function depends on a single variable, and then you take the derivative with respect to that variable, you are taking an ordinary derivative.
+    \begin{equation*}
+        f(x) = 2x^2
+    \end{equation*}
+    \begin{equation*}
+        \frac{df}{dx} = 4x
+    \end{equation*}
+    If a function depends on multiple variables, and you are taking a derivative with respect to one of them, then it is a partial derivative.
+    \begin{equation*}
+        f(x, y) = 2xy
+    \end{equation*}
+    \begin{equation*}
+        \frac{\partial f}{\partial x} = 2y
+    \end{equation*}
+    An equation with only ordinary derivatives is an \textbf{ordinary differential equation}, while an equation with both ordinary and partial derivatives is a \textbf{partial differential equation}.
+    \newline \newline
+    If there are more than one unknown functions that you are looking for, use a system of differential equations.
+    \newline \newline
+    The \textbf{order} of a differential equation is the order of the highest derivative that appears in the equation. Using $y = u(t)$
+    \begin{equation*}
+        F(t, u(t), u'(t), u''(t), \dots, u^{(n)}(t)) = F(t, y, y', y'', \dots, y^{(n)}) = 0
+    \end{equation*}
+    A differential equation is said to be \textbf{linear} if it can be written in the form
+    \begin{equation*}
+        a_0(t)y^{(n)} + a_1(t)y^{(n - 1)} + \dots + a_n(t)y = \sum_{i=0}^{n} a_i(t)y^{(n-i)} = g(t)
+    \end{equation*}
+    An equation that cannot be written in that form is called a \textbf{nonlinear} equation. For example,
+    \begin{equation*}
+        \frac{d^2\theta}{dt^2} + \frac{g}{L} \sin \theta = 0
+    \end{equation*}
+    Since the methods solving linear differential equations are highly developed, it is sometimes useful to use linear approximations of nonlinear functions. This process of approximating a nonlinear equation by a linear one is called \textbf{linearization}. For example, when $\theta$ is small, $sin \theta \approx \theta$. So the previous equation becomes
+    \begin{equation*}
+        \frac{d^2\theta}{dt^2} + \frac{g}{L} \theta = 0
+    \end{equation*}
+    A \textbf{solution} of an ordinary differential equation on the interval $\alpha < t < \beta$ is a function $\phi$ such that $\phi'$, $\phi''$, $\dots$, $\phi^{(n)}$ exist and satisy
+    \begin{equation*}
+        \phi^{(n)}(t) = f[t, \phi(t), \phi'(t), \phi''(t), \dots, \phi^{(n - 1)}(t)]
+    \end{equation*}
+    for every t in $\alpha < t < \beta$, $t \in \{r \in \textbf{R}: \alpha < t < \beta\}$, or $t \in (\alpha, \beta)$.

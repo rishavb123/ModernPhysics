@@ -1,51 +1,16 @@
-\section{Discussion: the Irrationality of $\sqrt{2}$}
-    \begin{theorem} 
-        There is no rational number whose square is 2.
-    \end{theorem}
-    \begin{proof}
-        A rational number can be written in the form $\frac{p}{q}$ where p and q are integers. We will use an indirect proof. First, assume there is a rational so that its square is 2. It can be written that
-        \begin{equation*}
-            (\frac{p}{q})^2 = 2
-        \end{equation*}
-        We can assume $p$ and $q$ have no common factors since they would cancel anyways and give us a new $p$ and $q$. Now we can written
-        \begin{equation*}
-            p ^ 2 = 2q^2
-        \end{equation*}
-        which implies that $p^2$ is an even number, which implies $p$ is an even number. So we can let $p = 2r$. Plugging this in
-        \begin{equation*}
-            2r^2 = q^2
-        \end{equation*}
-        With the same logic as for with $p$, $q$ is also even. So $p$ and $q$ share a common factor of 2 which contradicts the assumption made in the beginning that they share no common factors.
-    \end{proof}
-    \subsection*{Important number systems as sets}
-        \textit{Natural Numbers}
-        \begin{equation*}
-            \textbf{N} = \{1,2,3,4,5,\dots\}
-        \end{equation*}
-        \indent Addition works well he, but there is no additive identity or inverse.
-        \newline \newline
-        \textit{Integers}
-        \begin{equation*}
-            \textbf{Z} = \{\dots,-2,-1,0,1,2,\dots\}
-        \end{equation*}
-        \indent This includes the additive identity (0) and the additive inverses, which define subtraction. The multiplicative identity is 1, but for multiplicative inverses we need to extend to \dots
-        \newline \newline
-        \textit{Rational Numbers}
-        \begin{equation*}
-            \textbf{Q} = \{\text{all fractions $\frac{p}{q}$ where $p$ and $q$ are integers and $q$ $\neq$ 0}\}
-        \end{equation*}
-        \indent The multiplicative inverses define division. All of these properties of \textbf{Q} make it into a \textit{field}. A field is any set where addition and multiplication are well-defined operations that are commutative, associative, and obey the distributive property: $a(b + c) = ab + bc$. There must be an additive and multiplicative identity, and each element must have an additive and multiplicative inverse.
-        \newline
-        \indent The set \textbf{Q} has a natural \textit{order}. Given two rational numbers $r$ and $s$, one of the following is true:
-        \begin{equation*}
-            \text{$r < s$, $r = s$, or $r > s$}
-        \end{equation*}
-        This ordering is transitive: if $r < s$ and $s < t$, then $r < t$. Also, between any two rational numbers, $r$ and $s$, there is a rational number between them: $\frac{r+s}{2}$, which implies that rational numbers are densely packed. 
-        \newline 
-        \indent \textbf{Q} is has holes in the spots of irrationals, such as $\sqrt{2}$ and $\sqrt{3}$. To fill these we add \dots
-        \newline \newline
-        \textit{Real Numbers}
-        \begin{equation*}
-            \textbf{R} = \{\text{all real numbers}\}
-        \end{equation*}
-        \indent Just like \textbf{Q}, \textbf{R} is a field. \textbf{R} is added as a superset of \textbf{Q}. \textbf{N} $\subseteq$ \textbf{Z} $\subseteq$ \textbf{Q} $\subseteq$ \textbf{R}.
+\section{Some Basic Mathematical Models; Directional Fields}
+    Equations containing derivatives are \textbf{differential equations}. 
+    \newline
+    A differential equation that describes some physical process is a \textbf{mathematical model} of the process.
+    \newline
+    \textbf{Direction Fields} are valuable tools in studying the solutions of differential equations of the form
+    \begin{equation*}
+        \frac{dy}{dt} = f(t, y)
+    \end{equation*}
+    where $f$ is a given function of the two variables $t$ and $y$, sometimes called the \textbf{rate function}.
+    \newline
+    To model population growth, an equation in the form
+    \begin{equation*}
+        \frac{dp}{dt} = rp - k
+    \end{equation*}
+    may work, where $r$ is the growth rate and k is the predation rate. The equilibrium solution for this equation is $k / r$.
