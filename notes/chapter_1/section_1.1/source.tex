@@ -1,16 +1,50 @@
-\section{Some Basic Mathematical Models; Directional Fields}
-    Equations containing derivatives are \textbf{differential equations}. 
-    \newline
-    A differential equation that describes some physical process is a \textbf{mathematical model} of the process.
-    \newline
-    \textbf{Direction Fields} are valuable tools in studying the solutions of differential equations of the form
-    \begin{equation*}
-        \frac{dy}{dt} = f(t, y)
-    \end{equation*}
-    where $f$ is a given function of the two variables $t$ and $y$, sometimes called the \textbf{rate function}.
-    \newline
-    To model population growth, an equation in the form
-    \begin{equation*}
-        \frac{dp}{dt} = rp - k
-    \end{equation*}
-    may work, where $r$ is the growth rate and k is the predation rate. The equilibrium solution for this equation is $k / r$.
+\section{Newton's Laws}
+\indent Isaac Newton introduced the three basic laws of mechanics that are known as Newton's Laws.
+\subsection*{Newton's Second Law}:
+\begin{equation}
+    \va{F}_{net} = m\va{a}
+\end{equation}
+Sometimes this equation is written as
+\begin{equation}
+    \va{F}_{net} = \frac{d\va{p}}{dt}
+\end{equation}
+to account for a changing mass, where $\va{p} = m\va{v}$. 
+\subsection*{Newton's First Law}
+Newton's first law is a special case of the second law:
+\begin{equation}
+    \text{If $\va{F}_{net} = \va{0}$, the motion is uniform}
+\end{equation}
+which means that velocity is constant and accusation is 0.
+\subsection*{Gravity}
+Acceleration caused by gravity is the same on every object. This seems contradictory to what we have seen from Newton's second law, $\va{a} = \va{F}_{new} / m$, but since the force of gravity is proportional to the mass, the acceleration is independent of the mass.
+\subsection*{Hooke's Law}
+The equation for spring force is $F = -kx$. So,
+\begin{equation}
+    -kx = m\frac{d^2x}{dt}
+\end{equation}
+The solution of this differential equation is 
+\begin{equation}
+    x(t) = A\sin(\omega t + \varphi)
+\end{equation}
+where $A$ is the \textit{amplitude} of the motion, and $\varphi$ is the textit{phase}. Both of these quantities are determined by the initial conditions. $\omega$ is determined by the spring and the mass:
+\begin{equation}
+    \omega = \sqrt{k / m}
+\end{equation}
+where $\omega$ is the \textit{angular frequency}, which is related to the \textit{period} $T$ and \textit{frequency} $f$. 
+\begin{equation}
+    T = \frac{1}{f}
+\end{equation}
+so $f = \omega/2\pi$.
+\subsection*{Newton's Third Law}
+Every force has an equal and opposite reaction force.
+\begin{equation}
+    \va{F}_12 = -\va{F}_21
+\end{equation}
+This can be restated in terms of momentum.
+\begin{equation}
+    \frac{d\va{p_1}}{dt} = -\frac{d\va{p_2}}{dt} \text{ or } \frac{d}{dt} (\va{p_1} + \va{p_2}) = 0
+\end{equation}
+So,
+\begin{equation}
+    \va{P}_{tot} = \text{a constant vector}
+\end{equation}
