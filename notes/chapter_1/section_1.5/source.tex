@@ -1,0 +1,26 @@
+\section{Cantor's Theorem}
+    \subsection*{Cantor's Diagonalization Method}
+        Cantor initially published his discovery that \textbf{R} is uncountable in 1874, but in 1891 he offered another simpler proof that relies on decimal representations for real numbers.
+        \begin{theorem}
+            The open interval $(0, 1) = \{x \in \textbf{R}: 0 < x < 1\}$ is uncountable.
+        \end{theorem} 
+    \subsection*{Power Sets and Cantor's Theorem}
+        Given a set $A$, the \textit{power set} $P(A)$ refers to the collection of all subsets of $A$.
+        \textbf{Example:}
+        \begin{equation*}
+            P(\{a, b\}) = \{\emptyset, \{a\}, \{b\}, \{a, b\}\}
+        \end{equation*}
+        \begin{theorem}[Cantor's Theorem]
+            Given any set A, there does not exist a function $f: A \rightarrow P(A)$ that is onto.
+        \end{theorem}
+        \begin{proof}
+            For contradiction, assume that $f: A \rightarrow P(A)$ is onto. So for each element $a \in A$, $f(a)$ is a particular subset of $A$. Since f is onto, eery subset of $A$ appears as $f(a)$ for some $a \in A$. Now, let B be a subset of A ($B \subseteq A$) following
+            \begin{equation*}
+                B = \{a \in A: a \notin f(a)\} 
+            \end{equation*}
+            Since $f$ is onto $B = f(a')$ for some $a' \in A$.
+            \newline \newline
+            If $a'$ is in $B$ ($a' \in B$), $a' \notin f(a')$ since this is a requirement to be in B. Since $a' \notin f(a')$ and $f(a') = B$ implies $a' \notin B$ and we assumed that $a' \in B$, we have a contradiction.
+            \newline \newline
+            If $a'$ is not in $B$ ($a' \notin B$), $a' \in f(a')$ since it would otherwise be in B. Since $a' \in f(a')$ and $f(a') = B$ implies $a' \in B$ and we assumed that $a' \notin B$, we have a contradiction.
+        \end{proof}

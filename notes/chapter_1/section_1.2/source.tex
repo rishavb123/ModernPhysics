@@ -1,43 +1,72 @@
-\section{Solutions of Some Differential Equations}
-    Consider a differential equation of the form
-    \begin{equation*}
-        \frac{dy}{dt} = ay - b
-    \end{equation*}
-    Solution:
-    \newline
-    First, we perform some basic operations:
-    \begin{equation*}
-        \frac{dy / dt}{ay - b} = 1
-    \end{equation*}
-    \begin{equation*}
-        \frac{dy / dt}{y - b / a} = a
-    \end{equation*}
-    Then by the chain rule we get:
-    \begin{equation*}
-        \frac{d}{dt} \ln |y - b / a| = a
-    \end{equation*}
-    Then we integrate with respect to t
-    \begin{equation*}
-        \int \frac{d}{dt} \ln |y - b / a| dt = \int a dt
-    \end{equation*}
-    \begin{equation*}
-        ln |y - b / a| = at + C
-    \end{equation*}
-    Then through some basic manipulation
-    \begin{equation*}
-        |y - b / a| = e^{at + C} = e^Ce^{at}
-    \end{equation*}
-    \begin{equation*}
-        y - b / a = \pm e^Ce^{at}
-    \end{equation*}
-    Let $c = \pm e^C$
-    \begin{equation*}
-        y - b / a = ce^{at}
-    \end{equation*}
-    \begin{equation*}
-        y = b / a + ce^{at}
-    \end{equation*}
-    So, $y = b / a + ce^{at}$ is the \textbf{general solution} to $\frac{dy}{dt} = ay - b$. If you have an initial condition $y_o$, that is when $t = 0$, $y = y_o$, we can write $c$ in terms of $y_o$. If we let $c = y_o - b / a$, then when $t = 0$, $y = y_o$.
-    \begin{equation*}
-        y = b / a + (y_o - b / a)e^{at}
-    \end{equation*}
+\section{Some Preliminaries}
+    \subsection*{Sets}
+        A \textit{set} is a collection of object, usually real numbers. The objects that make up the set are \textit{elements}.
+        \newline
+        \textbf{Notation}
+            \newline
+            $\indent \bullet$ $x \in A$ means x is in A
+            \newline
+            $\indent \bullet$ $A \cup B$ (union of A and B) is defined by: if $x \in A \cup B$ then $x \in A$ or $x \in B$ (or both)
+            \newline
+            $\indent \bullet$ $A \cap B$ (intersection of A and B) is defined by: if $x \in A \cap B$ then $x \in A$ and $x \in B$
+            \newline
+            $\indent \bullet$ $\emptyset$ is an \textit{empty set}, or a set without any elements in it
+            \newline
+            $\indent \bullet$ if $A \cap B = \emptyset$, then A and B are \textit{disjoint}
+            \newline
+            $\indent \bullet$ $A \supseteq B$ or $B \subseteq A$ every element of B is in A so for each $x \in B$, $x \in A$. So B is a \textit{subset} of A, or A \textit{contains} B
+            \newline
+            $\indent \bullet$ $A = B$ means each element of $A \subseteq B$ and $B \subseteq B$. So the sets are the same.
+            \newline
+            $\indent \bullet$ $\bigcup\limits_{n=1}^{\infty} A_n$ or $\bigcup\limits_{n \in \textbf{N}} A$ means $A_1 \cup A_2 \cup \dots \cup A_\infty$
+            \newline
+            $\indent \bullet$ $\bigcap\limits_{n=1}^{\infty} A_n$ or $\bigcap\limits_{n \in \textbf{N}} A$ means $A_1 \cap A_2 \cap \dots \cap A_\infty$
+            \newline
+            $\indent \bullet$ $A^c = \{x \in \textbf{R}: x \notin A\}$
+            \newline \newline
+        You can define a set by listing items ($N = \{1, 2, 3, \dots\}$), with words (let E be all even natural numbers), or with a rule or algorithm ($S = \{r \in \textbf{Q}: r^2 < 2\}$).
+        \newline \newline
+        \textbf{De Morgan's Laws}
+            \newline
+            $(A \cap B)^c = A^c \cup B^c$ and $(A \cup B)^c = A^c \cap B^c$
+    \subsection*{Functions}
+        Given two sets A and B, a \textit{function}  from A to B is a rule or mapping that takes each element $x \in A$ to a single element in B. We can write $f$: $A \to B$. Given $x \in A$, $f(x)$ represents an element of B associated with x by f. A is the domain of $f$. The range is a subset of B.
+        \newline
+        \textbf{Triangle Inequality}
+        \newline
+        \indent \textit{Absolute Value Function: }
+        \begin{equation*}
+            |x| = \begin{cases}
+                x & \text{if } x \geq 0 \\
+                -x & \text{if } x < 0
+            \end{cases}
+        \end{equation*}
+        \indent The Absolute Value Function satisfies:
+        \begin{equation*}
+            |ab| = |a||b|
+        \end{equation*}
+        \begin{equation*}
+            |a + b| \leq |a| + |b|
+        \end{equation*}
+    \subsection*{Logic and Proofs}
+        A type of indirect proof previously used is \textit{proof by contradiction},which starts by negating what we are proving and then finding a contradiction. Most proofs are direct, which means it starts from a true statement and then gets to the theorems conclusion.
+        \begin{theorem}
+            Two real numbers a and b are equal if and only if for every real number $\epsilon > 0$ it follows that $|a - b| < \epsilon$
+        \end{theorem}
+        \begin{proof}
+            Must prove both:
+            \newline
+            $\Rightarrow$ If $a = b$, then for every real number $\epsilon$ it follows that $|a - b| < \epsilon$.
+            \newline
+            If $a = b$, then $|a - b| = 0$, and $|a - b| < \epsilon$ for any $\epsilon > 0$.
+            \newline \newline
+            $\Leftarrow$ If for every real number $\epsilon > 0$ if follows that $|a - b| < \epsilon$, then we must have $a = b$.
+            \newline
+            Assume $a \neq b$,
+            \newline
+            let $\epsilon_0 = |a - b| > 0$ since $a \neq b$
+            \newline
+            But $|a - b| = \epsilon_0$ contradicts $|a - b| < \epsilon_0$, which was given. So $a \neq b$ is unacceptable, and $a$ must equal $b$.
+        \end{proof}
+    \subsection*{Induction}
+    The fundamental principle behind induction is that if S is a subset of \textbf{N} so that $S$ contains 1 and if $S$ contains $n$, then $S$ contains $n + 1$, then by induction $S = \textbf{N}$.
